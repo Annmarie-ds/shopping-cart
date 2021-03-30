@@ -5,13 +5,14 @@ class Inventory
 
   def initialize(file)
     @file = file
-    @filepath = './products.json'
     @all_products = []
     load_json
   end
 
+  private
+
   def load_json
-    file = File.read(@filepath)
+    file = File.read('lib/products.json')
     all_products = JSON.parse(file)
     all_products.each { |p|
       @uuid = p["uuid"]
