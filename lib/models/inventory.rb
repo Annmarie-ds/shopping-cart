@@ -9,16 +9,19 @@ class Inventory
     load_json
   end
 
+  def all
+    return @all_products
+  end
+
   private
 
   def load_json
-    file = File.read('lib/products.json')
-    all_products = JSON.parse(file)
-    all_products.each { |p|
+    all_products = JSON.parse(@file)
+    all_products.each do |p|
       @uuid = p["uuid"]
       @name = p["name"]
       @pice = p["price"]
       @all_products << p
-    }
+    end
   end
 end
