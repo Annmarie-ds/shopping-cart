@@ -15,7 +15,8 @@ class InventoryView
 
   def ask_user_for_index
     puts "Select item by entering number on the left of item"
+    puts "(1-4)"
     puts ">"
-    return gets.chomp.to_i - 1
+    return gets.chomp.to_i
   end
 end

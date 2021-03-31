@@ -1,3 +1,5 @@
+require 'json'
+
 class Product
   attr_reader :uuid, :name, :price
 

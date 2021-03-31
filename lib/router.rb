@@ -6,22 +6,22 @@ class Router
   end
 
   def run
-    puts "Welcome to the Shop!"
+    puts "------------------WELCOME!--------------------"
     puts "----------------------------------------------"
 
     while @running
       display_tasks
       action = gets.chomp.to_i
-      route_action(action)
+      route_main_menu(action)
     end
   end
 
-  def route_action(action)
+  def route_main_menu(action)
     case action
     # browse
-    when 1 then index = @inventory_controller.display_products
+    when 1 then @inventory_controller.display_products
                 display_inventory_menu
-                inventory(action, index)
+                route_inventory_menu(action)
     # view cart
     when 2 then @cart_controller.display_cart
                 display_tasks
@@ -30,12 +30,12 @@ class Router
     end
   end
 
-  def inventory(action, index)
+  def route_inventory_menu(action)
     case action
     # show selected product details
-    when 1 then @inventory_controller.show_product(index)
+    when 1 then @inventory_controller.show_product(action)
     # add to cart
-    when 2 then @cart_controller.add(index)
+    when 2 then @cart_controller.add_to_cart(action)
     # back to main menu
     when 3 then display_tasks
     # exit

@@ -4,8 +4,8 @@ class Inventory
   attr_reader :all_products
 
   def initialize(file)
-    @file = file
     @all_products = []
+    @file = File.read('lib/products.json')
     load_json
   end
 
