@@ -23,12 +23,12 @@ enter the numbers indicated by the instructions.
 
 Example Input and Output:
 ```
-$ Please enter 1, 2 or 3 from the options below:
-$ ----------------------------------------------
-$ 1. Browse shop
-$ 2. View cart
-$ 3. Checkout
-$ ----------------------------------------------
+Please enter 1, 2 or 3 from the options below:
+----------------------------------------------
+1. Browse shop
+2. View cart
+3. Checkout
+----------------------------------------------
 ```
 Input: 3
 
