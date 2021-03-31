@@ -13,8 +13,8 @@ IF YOU GET an ERROR message stating: You must use Bundler 2 or greater with this
 $ gem install bundler
 ```
 
-## Run the program
-From the program's lib folder, run
+## Run the application
+From the application's lib folder, run
 ```
 $ ruby app.rb
 ```
@@ -30,15 +30,31 @@ Please enter 1, 2 or 3 from the options below:
 3. Checkout
 ----------------------------------------------
 ```
-Input: 3
+Input: 2
 
 Output: 
 ```
-Thanks for stopping by, see you again soon!
+Products in Shopping Cart:
+1. Chain Ring 146mm - $65.95
+2. Front Derailleur - 34.9mm - $31.22
+3. Front Derailleur - 34.9mm - $31.22
+TOTAL: $128.39
+Discount applied: 20% off on total greater than 100
+Total after discount: $102.71
 ```
 
+### Application functions
+- Load a list of products from a file.
+- List product details to the user.
+- Add products to a Shopping Cart.
+- Apply promotional discounts.
+    - 10% off on total greater than $20
+    - 15% off on total greater than $50
+    - 20% off on total greater than $100
+- Calculate and display the total cost
+
 ## Run the tests
-From the program's main folder, run
+From the application's main folder, run
 ```
 $ rspec
 ```
