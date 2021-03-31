@@ -34,7 +34,7 @@ Input: 3
 
 Output: 
 ```
-$ Thanks for stopping by, see you again soon!
+Thanks for stopping by, see you again soon!
 ```
 
 ## Run the tests
