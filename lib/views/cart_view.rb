@@ -3,7 +3,7 @@ class CartView
     index = 0
     puts "Products in Shopping Cart:"
     cart.shopping_cart.each do |product|
-      puts "#{index + 1}. #{product["name"]} - #{product["price"]}"
+      puts "#{index + 1}. #{product["name"]} - $#{product["price"]}"
     end
     puts "TOTAL: $#{cart.total.round(2)}"
     if cart.total > 20.00 && cart.total < 50.00

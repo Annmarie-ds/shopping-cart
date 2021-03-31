@@ -10,6 +10,6 @@ class Cart
 
   def add(product)
     @shopping_cart << product
-    @total += product["price"]
+    @total += product["price"].to_f
   end
 end

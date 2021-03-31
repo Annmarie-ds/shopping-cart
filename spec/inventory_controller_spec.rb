@@ -8,20 +8,20 @@ describe InventoryController do
   end
 
   describe "#initialize" do
-    it "should store the Inventory in an instance variable" do
+    it "should store an instance of Inventory" do
       expect(@inventory_controller
         .instance_variable_get(:@inventory))
         .to be_a Inventory
     end
   end
 
-  describe "#show_product" do
+  describe ".show_product" do
     it "should implement a method to show a single product" do
       expect(@inventory_controller).to respond_to :show_product
     end
   end
 
-  describe "#display_products" do
+  describe ".display_products" do
     it "should implement a method to show all products" do
       expect(@inventory_controller).to respond_to :display_products
     end
