@@ -2,7 +2,7 @@ require_relative '../models/inventory'
 require_relative '../views/inventory_view'
 
 class InventoryController
-  attr_reader :inventory, :view, :products
+  attr_reader :inventory, :view, :products, :product
 
   def initialize(inventory:)
     @inventory = inventory
@@ -15,8 +15,9 @@ class InventoryController
   end
 
   def display_products
-    @all_products = @inventory.all
-    @inventory_view.display_all(@all_products)
+    all_products = @inventory.all
+    @inventory_view.display_all(all_products)
+    @inventory_view.ask_user_for_index
   end
 
 end

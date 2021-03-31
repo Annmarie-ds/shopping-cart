@@ -11,7 +11,6 @@ require_relative 'router'
 json_file = File.read('products.json')
 @inventory = Inventory.new(json_file)
 inventory_controller = InventoryController.new(inventory: @inventory)
-cart = Cart.new
 
 @cart = Cart.new()
 cart_controller = CartController.new(cart: @cart, inventory: @inventory)

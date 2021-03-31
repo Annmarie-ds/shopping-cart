@@ -10,11 +10,10 @@ class CartController
     @cart_view = CartView.new
   end
 
-  def add(index)
+  def add_to_cart(index)
     @product = @inventory.all_products[index - 1]
     @cart.add(@product)
     @cart_view.add_to_cart_display(@product)
-
   end
 
   def display_cart
