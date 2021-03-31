@@ -5,7 +5,7 @@ class Inventory
 
   def initialize(file)
     @all_products = []
-    @file = File.read('lib/products.json')
+    @file = File.read('products.json')
     load_json
   end
 
