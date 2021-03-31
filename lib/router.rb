@@ -12,7 +12,6 @@ class Router
     while @running
       display_tasks
       action = gets.chomp.to_i
-      print `clear`
       route_action(action)
     end
   end
@@ -21,9 +20,8 @@ class Router
     case action
     # browse
     when 1 then index = @inventory_controller.display_products
-                        display_inventory_menu
-                        inventory(action, index)
-                        display_tasks
+                display_inventory_menu
+                inventory(action, index)
     # view cart
     when 2 then @cart_controller.display_cart
                 display_tasks
@@ -34,8 +32,14 @@ class Router
 
   def inventory(action, index)
     case action
-    when 1 then @inventory_controller.show(index)
+    # show selected product details
+    when 1 then @inventory_controller.show_product(index)
+    # add to cart
     when 2 then @cart_controller.add(index)
+    # back to main menu
+    when 3 then display_tasks
+    # exit
+    when 4 then stop
     end
   end
 
@@ -54,10 +58,12 @@ class Router
   end
 
   def display_inventory_menu
-    puts "Please enter 1 or 2 from the options below:"
+    puts "Please enter 1, 2, 3 or 4 from the options below:"
     puts "----------------------------------------------"
     puts "1. View item details"
     puts "2. Add to cart"
+    puts "3. Back to main menu"
+    puts "4. Exit"
     puts "----------------------------------------------"
   end
 end

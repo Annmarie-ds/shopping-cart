@@ -15,8 +15,9 @@ class InventoryController
   end
 
   def display_products
-    @all_products = @inventory.all
-    @inventory_view.display_all(@all_products)
+    all_products = @inventory.all
+    @inventory_view.display_all(all_products)
+    @inventory_view.ask_user_for_index
   end
 
 end
