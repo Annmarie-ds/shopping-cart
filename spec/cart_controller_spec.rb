@@ -2,7 +2,7 @@ require 'rspec'
 require_relative '../lib/controllers/cart_controller'
 
 describe CartController do
-  let(:cart) { Cart.new() }
+  let(:cart) { Cart.new }
   let(:inventory) { Inventory.new(@file) }
   let(:cart_controller) { CartController.new(cart: cart, inventory: inventory)}
 

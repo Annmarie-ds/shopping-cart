@@ -12,7 +12,7 @@ json_file = File.read('products.json')
 @inventory = Inventory.new(json_file)
 inventory_controller = InventoryController.new(inventory: @inventory)
 
-@cart = Cart.new()
+@cart = Cart.new
 cart_controller = CartController.new(cart: @cart, inventory: @inventory)
 
 router = Router.new(cart_controller: cart_controller, inventory_controller: inventory_controller)
